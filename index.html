@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Weather App</title>
+    <meta charset="UTF-8" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="src/style.css">
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+  </head>
+
+  <body>
+    <div class="container">
+      <div class="card" style="width: 30rem;">
+        <div class="card-body">
+          <h5 class="card-title">How's the Weather?</h5>
+          <div class="row">
+            <div class="col-8">
+              <input
+                type="text"
+                id="city-name"
+                class="form-control"
+                placeholder="City name"
+                aria-label="First name"
+              />
+            </div>
+            <div class="col-4">
+              <span class="but">
+                  <button type="submit" id="srch" class="btn btn-primary">Search</button>
+              </span>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-8">
+          <h5 id="where" class="card-subtitle mb-2 text-muted">Tehran</h5>
+          <p class="card-text" id="date">
+            Sunday 3:00 a.m </p><p>
+            cloudy
+          </p>
+          <h1 class="temp">61</h1>
+        </div>
+        <div class="col-4">
+          <img src="https://www.freeiconspng.com/thumbs/cloud-icon/cloud-icon-8.png" alt="cloady"></br>
+          <div><a href="#" id="cel">°C</a>/<a href="#" id="far">°F</a></div>
+        </div>
+        </div>
+        <br>
+        <br>
+        <h6>Check the days ahead😉</h6>
+        <br>
+        <div class="row">
+            <div class="col-2">
+              <a href="#">Mon</a>
+            </div>
+            <div class="col-2">
+                <a href="#">Tue</a>
+              </div>
+              <div class="col-2">
+                  <a href="#">Wed</a>
+                </div>
+                <div class="col-2">
+                    <a href="#">Thu</a>
+                  </div>
+                  <div class="col-2">
+                      <a href="#">Fri</a>
+                    </div>
+                    <div class="col-2">
+                        <a href="#">Sat</a>
+                      </div>
+        </div>
+        </div>
+        </div>
+      </div>
+
+      <script src="src/App.js"></script>
+    </div>
+  </body>
+</html>
