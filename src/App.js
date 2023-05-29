@@ -50,10 +50,15 @@ function Temp(response) {
   let desc = document.querySelector("#des");
   let humi=document.querySelector("#hum");
   let wind=document.querySelector("#win");
+  let ico=document.querySelector("#icon");
+  celTemp = Math.round(response.data.main.temp);
   t1.innerHTML = Math.round(response.data.main.temp);
   desc.innerHTML = response.data.weather[0].description;
   humi.innerHTML = response.data.main.humidity;
   wind.innerHTML = Math.round(response.data.wind.speed);
+  let ic =response.data.weather[0].icon;
+  ico.setAttribute("src",`http://openweathermap.org/img/wn/${ic}@2x.png`);
+  ico.setAttribute("alt", response.data.weather[0].description);
 }
 
 function name(event) {
@@ -68,6 +73,26 @@ function name(event) {
 }
 let srch = document.querySelector("#srch");
 srch.addEventListener("click", name);
+
+let celTemp=null;
+
+function farTemp(event){
+  event.preventDefault();
+  let t=document.querySelector(".temp");
+  t.innerHTML = Math.round(celTemp*9/5+32);
+}
+
+let f=document.querySelector("#far");
+f.addEventListener("click",farTemp)
+
+function CTemp(event){
+  event.preventDefault();
+  let t=document.querySelector(".temp");
+  t.innerHTML = celTemp;
+}
+
+let c=document.querySelector("#cel");
+c.addEventListener("click",CTemp)
 
 //function tempCel(event) {
 //  event.preventDefault();
