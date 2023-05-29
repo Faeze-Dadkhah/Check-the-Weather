@@ -25,11 +25,20 @@ body {
     font-weight: bolder;
   }
   .temp {
-    text-align: right;
+    text-align: left;
     font-size: 60px;
     padding-top: 0%;
     padding-bottom: 0%;
     margin-top: 0%;
     margin-bottom: 0%;
   }
-  
+  #des{
+    text-transform: capitalize;
+    margin-bottom: 10px;
+    font-weight: bold;
+    font-size: 20px;
+  }
+  #hum{
+    margin-top: 0;
+    padding-top: 0;
+  }
