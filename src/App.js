@@ -44,6 +44,18 @@ let week = [
 let date = document.querySelector("#date");
 date.innerHTML = week[d] + " " + h + ":" + m;
 
+function ForeShow(response){
+  console.log(response.data.daily);
+
+}
+
+function Forcast(coords){
+  //console.log(coords);
+  let key = "5f472b7acba333cd8a035ea85a0d4d4c";
+  let url =`https://api.openweathermap.org/data/2.5/onecall?lat=${coords.lat}&lon=${coords.lon}&appid=${key}&units=metric`;
+  axios.get(url).then(ForeShow);
+}
+
 function Temp(response) {
   console.log(response.data)
   let t1 = document.querySelector(".temp");
@@ -59,6 +71,7 @@ function Temp(response) {
   let ic =response.data.weather[0].icon;
   ico.setAttribute("src",`http://openweathermap.org/img/wn/${ic}@2x.png`);
   ico.setAttribute("alt", response.data.weather[0].description);
+  Forcast(response.data.coord);
 }
 
 function name(event) {
