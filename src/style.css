@@ -42,3 +42,10 @@ body {
     margin-top: 0;
     padding-top: 0;
   }
+  h6{
+    font-weight: bolder;
+    font-size: large;
+  }
+  #otherDays{
+    text-align: center;
+  }

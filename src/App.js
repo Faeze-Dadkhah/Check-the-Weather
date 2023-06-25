@@ -44,9 +44,30 @@ let week = [
 let date = document.querySelector("#date");
 date.innerHTML = week[d] + " " + h + ":" + m;
 
-function ForeShow(response){
-  console.log(response.data.daily);
+function Day(dt) {
+  let date = new Date(dt * 1000);
+  let index = date.getDay();
+  let days = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
 
+  return days[index];
+}
+
+function ForeShow(response){
+  let FcArray = response.data.daily;
+  console.log(response.data.daily);
+  let FcHtml = document.querySelector("#forcast");
+  let aux = `<div class="row">`;
+  FcArray.forEach(function(forcastDay,index){
+    if(index<6){
+      aux = aux + `
+            <div class="col-2">
+              <div id="otherDays">${Day(forcastDay.dt)}</div>
+              <img src="http://openweathermap.org/img/wn/${forcastDay.weather[0].icon}@2x.png" alt="sunny"></br>
+              <div>${Math.round(forcastDay.temp.max)}° ${Math.round(forcastDay.temp.min)}°</div>
+            </div>`;
+    }
+  })
+  FcHtml.innerHTML = aux + `</div>`;
 }
 
 function Forcast(coords){
